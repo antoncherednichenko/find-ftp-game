@@ -6,15 +6,15 @@ module.exports = {
   theme: {
     colors: {
       'primary-white': '#F6F8FF',
-      'primary-green': '#4bc77c',
-      'primary-black': '#0F1923',
-      'primary-grey': '#242A38',
-      'primary-dark': '#10061E'
+      'primary-orange': '#FC8B40',
+      'primary-black': '#191B1F',
+      'primary-grey': '#20232B'
     },
     fontFamily: {
       sans: ['Roboto', 'sans-serif']
     },
-    extend: {},
+    extend: {
+    },
   },
   plugins: [
     plugin(({ addUtilities, addComponents, theme }) => {
@@ -24,6 +24,10 @@ module.exports = {
           justifyContent: 'space-between',
           alignItems: 'center'
         },
+        '.between': {
+          display: 'flex',
+          justifyContent: 'space-between',
+        },
         '.center': { margin: '0 auto' },
         '.container': {
           maxWidth: '1920px',
@@ -31,31 +35,31 @@ module.exports = {
           margin: '0 auto',
           padding: '0 15px'
         },
-        'primary-blur': {
+        '.primary-blur': {
           background: 'linear-gradient(91.03deg, rgba(255, 254, 254, 0.23) -47.11%, rgba(255, 254, 254, 0.23) 110.32%)',
           backdropFilter: 'blur(30px)'
-        }
+        },
+        '.max-w-130-px': { maxWidth: '130px' },
+        '.w-50px': { width: '50px' },
+        '.h-50px': { height: '50px' },
+        '.py-50px': { padding: '50px 0' },
+        '.w-30px': { width: '30px' }
       })
       addComponents({
         '.btn-primary': {
-          maxWidth: '200px',
+          maxWidth: '160px',
           width: '100%',
           border: 'none',
-          background: theme('colors[primary-green]'),
+          background: theme('colors[primary-orange]'),
           color: theme('colors[primary-white]'),
           borderRadius: '4px',
           cursor: 'pointer',
           fontSize: '18px',
           padding: '10px 15px',
-          textAlign: 'center',
-          boxShadow: '2px 2px 10px rgba(0, 0, 0, 0.3)',
-          transition: 'box-shadow 0.3s',
-          '&:hover': {
-            boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.3)'
-          }
+          textAlign: 'center'
         },
         '.blur-ellipse': {
-          background: theme('colors[primary-green]'),
+          background: theme('colors[primary-orange]'),
           filter: 'blur(4px)'
         }
       })
