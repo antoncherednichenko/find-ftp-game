@@ -1,7 +1,7 @@
-export default filterStore = {
+const filterStore = {
     namespaced: true,
     state: {
-        filterList: [
+        ganreList: [
             'shooter', 
             'mmorpg',
             'strategy',
@@ -47,6 +47,12 @@ export default filterStore = {
             'low-spec',
             'tower-defense',
             'horror',
+        ],
+        sortList: [ 
+            { id: 'release-date', title: 'Release date'},
+            { id: 'popularity', title: 'Popularity'},
+            { id: 'alphabetical', title: 'Alphabetical'},
+            { id: 'relevance', title: 'Rrelevance'}, 
         ] 
     },
     mutations: {
@@ -56,3 +62,5 @@ export default filterStore = {
 
     }
 }
+
+export default filterStore
