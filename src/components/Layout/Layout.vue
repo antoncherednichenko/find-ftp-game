@@ -1,8 +1,8 @@
 <template>
   <div class="bg-primary-black w-screen h-screen">
-        <div class="container between">
+        <div class="container flex flex-row w-full">
             <Menu />
-            <div>
+            <div class="w-full">
                 <slot></slot>
             </div>
         </div>

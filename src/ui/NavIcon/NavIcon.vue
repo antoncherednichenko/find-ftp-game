@@ -3,7 +3,7 @@
             :class="{ 'bg-primary-grey': !isActive, 'bg-primary-orange': isActive }" 
             class="w-50px h-50px rounded-xl flex justify-center items-center cursor-pointer text-primary-white"
         >
-        <i :class="icon"></i>
+        <i class=" text-2xl" :class="icon"></i>
     </button>
 </template>
 
@@ -12,8 +12,8 @@ export default {
     props: {
         icon: {
             type: String,
-            required: true,
-            default: 'fa-regular fa-alien-8bit'
+            required: false,
+            default: ''
         },
         isActive: {
             type: Boolean,

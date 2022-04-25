@@ -1,0 +1,58 @@
+export default filterStore = {
+    namespaced: true,
+    state: {
+        filterList: [
+            'shooter', 
+            'mmorpg',
+            'strategy',
+            'racing',
+            'survival',
+            'moba',
+            'sports',
+            'social',
+            'sandbox',
+            'open-world',
+            'pvp',
+            'pve',
+            'pixel',
+            'voxel',
+            'zombie',
+            'mmorts',
+            'turn-based',
+            'first-person',
+            'third-Person',
+            'top-down',
+            'tank',
+            'space',
+            'sailing',
+            'side-scroller',
+            'superhero',
+            'permadeath',
+            'card',
+            'battle-royale',
+            'mmo',
+            'mmofps',
+            'mmotps',
+            '3d',
+            '2d',
+            'anime',
+            'fantasy',
+            'sci-fi',
+            'fighting',
+            'action-rpg',
+            'action',
+            'military',
+            'martial-arts',
+            'flight',
+            'low-spec',
+            'tower-defense',
+            'horror',
+        ] 
+    },
+    mutations: {
+
+    },
+    actions: {
+
+    }
+}

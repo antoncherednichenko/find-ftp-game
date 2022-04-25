@@ -33,7 +33,7 @@ module.exports = {
           maxWidth: '1920px',
           width: '100%',
           margin: '0 auto',
-          padding: '0 15px'
+          padding: '0 0 0 10px'
         },
         '.primary-blur': {
           background: 'linear-gradient(91.03deg, rgba(255, 254, 254, 0.23) -47.11%, rgba(255, 254, 254, 0.23) 110.32%)',
@@ -43,7 +43,15 @@ module.exports = {
         '.w-50px': { width: '50px' },
         '.h-50px': { height: '50px' },
         '.py-50px': { padding: '50px 0' },
-        '.w-30px': { width: '30px' }
+        '.w-30px': { width: '30px' },
+        '.rounded-l-40px': {
+          borderRadius: '40px 0px 0px 40px'
+        },
+        '.hover-underline': {
+          '&:hover': {
+            textDecoration: 'underline'
+          }
+        }
       })
       addComponents({
         '.btn-primary': {
