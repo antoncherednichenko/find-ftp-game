@@ -1,3 +1,4 @@
+import axios from 'axios'
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -11,6 +12,14 @@ export default new Vuex.Store({
   mutations: {
   },
   actions: {
+    API(_, queryParams) {
+      return axios({
+        method: 'POST',
+        baseURL: `https://www.freetogame.com/api/${queryParams}`
+      }).catch(err => {
+        console.error(err)
+      })
+    }
   },
   modules: {
     filter: filterStore

@@ -1,20 +1,40 @@
 <template>
     <div class="w-full">
         <div class="w-full max-w-screen-md flex justify-between items- py-50px">
-            <WhiteLink v-for="e in filterList" :key="e.id">{{ e.title }}</WhiteLink>
+            <WhiteLink 
+                @click.native="toggleSort(e.id)" 
+                v-for="e in filterList" 
+                :key="e.id"
+                :active="currentSort === e.id"
+            >{{ e.title }}</WhiteLink>
+            <div class="max-w-150px w-full">
+                <UiSelect
+                    :current="'Genre'" 
+                    :valueList="genreList"
+                />
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 import WhiteLink from '@/ui/WhiteLink/WhiteLink.vue'
+import UiSelect from '@/ui/Select/UiSelect.vue'
 
 export default {
     components: {
-        WhiteLink
+        WhiteLink,
+        UiSelect
     },
     computed: {
-        filterList() { return this.$store.state?.filter?.sortList }
+        filterList() { return this.$store.state?.filter?.sortList },
+        genreList() { return this.$store.state?.filter?.genreList },
+        currentSort() { return this.$store.state?.filter?.currentSort }
+    },
+    methods: {
+        toggleSort(id) {
+            this.$store.commit('filter/setSort', id)
+        }
     }
 }
 </script>

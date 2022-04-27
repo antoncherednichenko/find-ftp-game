@@ -1,7 +1,10 @@
 const filterStore = {
     namespaced: true,
     state: {
-        ganreList: [
+        currentPlatform: 'pc',
+        currentSort: 'release-date',
+        currentGenre: '',
+        genreList: [
             'shooter', 
             'mmorpg',
             'strategy',
@@ -53,10 +56,17 @@ const filterStore = {
             { id: 'popularity', title: 'Popularity'},
             { id: 'alphabetical', title: 'Alphabetical'},
             { id: 'relevance', title: 'Rrelevance'}, 
+        ],
+        platforms: [
+            { id: 'pc', icon: 'fa-solid fa-computer'  },
+            { id: 'browser', icon: 'fa-regular fa-window-maximize' },
+            { id: 'all', icon: 'fa-regular fa-object-group' }
         ] 
     },
     mutations: {
-
+        setGenre(state, value) { state.currentGenre = value },
+        setSort(state, value) { state.currentSort = value },
+        setPlatform(state, value) { state.currentPlatform = value }
     },
     actions: {
 

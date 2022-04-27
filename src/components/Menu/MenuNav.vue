@@ -1,11 +1,11 @@
 <template>
     <div class="w-50px flex flex-col gap-7">
         <NavIcon
-            v-for="i in icons"
-            :key="i.id"
-            :isActive="i.isActive"
-            :icon="i.icon"
-            @click.native="iconSwitcher(i.id)" 
+            v-for="e in platforms"
+            :key="e.id"
+            :isActive="currentPlatform === e.id"
+            :icon="e.icon"
+            @click.native="choosePlatform(e.id)" 
         />
     </div>
 </template>
@@ -17,22 +17,16 @@ export default {
     components: { NavIcon },
     data() {
         return {
-            icons: [
-                { id: 'pc', icon: 'fa-solid fa-computer', isActive: true  },
-                { id: 'browser', icon: 'fa-regular fa-window-maximize', isActive: false  },
-                { id: 'all', icon: 'fa-regular fa-object-group', isActive: false  }
-            ]
+            
         }
     },
+    computed: {
+        currentPlatform() { return this.$store.state?.filter?.currentPlatform },
+        platforms() { return this.$store.state?.filter?.platforms }
+    },
     methods: {
-        iconSwitcher(id) {
-            this.icons = this.icons.map(icon => {
-                if(icon.id === id) {
-                    return { ...icon, isActive: true }
-                } else {
-                    return { ...icon, isActive: false }
-                }
-            })
+        choosePlatform(id) {
+           this.$store.commit('filter/setPlatform', id)
         }
     }
 }

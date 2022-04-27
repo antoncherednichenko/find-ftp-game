@@ -40,6 +40,7 @@ module.exports = {
           backdropFilter: 'blur(30px)'
         },
         '.max-w-130-px': { maxWidth: '130px' },
+        '.max-w-150px': { maxWidth: '150px' },
         '.w-50px': { width: '50px' },
         '.h-50px': { height: '50px' },
         '.py-50px': { padding: '50px 0' },
@@ -50,6 +51,17 @@ module.exports = {
         '.hover-underline': {
           '&:hover': {
             textDecoration: 'underline'
+          }
+        },
+        '.screen-center': {
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translateX(-50%) translateY(-50%)',
+        },
+        '.hover-select': {
+          '&:hover': {
+            background: theme('colors[primary-orange]')
           }
         }
       })
