@@ -1,9 +1,11 @@
+
 const filterStore = {
     namespaced: true,
     state: {
         currentPlatform: 'pc',
         currentSort: 'release-date',
-        currentGenre: '',
+        currentGenre: 'shooter',
+        gameList: [],
         genreList: [
             'shooter', 
             'mmorpg',
@@ -66,10 +68,24 @@ const filterStore = {
     mutations: {
         setGenre(state, value) { state.currentGenre = value },
         setSort(state, value) { state.currentSort = value },
-        setPlatform(state, value) { state.currentPlatform = value }
+        setPlatform(state, value) { state.currentPlatform = value },
+        setGameList(state, value) { state.gameList = value }
     },
     actions: {
+        getGames({ dispatch, commit }, { currentPlatform, currentGenre, currentSort }) {
 
+            return dispatch('API', {
+                platform: currentPlatform,
+                genre: currentGenre,
+                sort: currentSort
+            }, { root: true }).then(data => {
+                if(data?.data) {
+                    commit('setGameList', data.data)
+                } else {
+                    console.error('Woops')
+                }
+            })
+        }
     }
 }
 
