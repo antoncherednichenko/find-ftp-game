@@ -1,6 +1,6 @@
 <template>
-    <div class="w-full">
-        <div class="w-full max-w-screen-md flex justify-between items- py-50px">
+    <div class="w-full sticky z-10 top-0 bg-primary-grey">
+        <div class="w-full max-w-screen-md flex justify-between items-center f-p">
             <WhiteLink 
                 @click.native="toggleSort(e.id)" 
                 v-for="e in filterList" 

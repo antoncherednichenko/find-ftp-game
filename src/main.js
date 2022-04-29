@@ -6,6 +6,10 @@ import './assets/tailwind.css'
 
 Vue.config.productionTip = false
 
+Vue.filter('dateParser', (value) => {
+  return new Date(value).toLocaleDateString('ru')
+})
+
 new Vue({
   router,
   store,

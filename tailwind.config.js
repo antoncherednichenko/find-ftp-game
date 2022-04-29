@@ -32,8 +32,12 @@ module.exports = {
         '.container': {
           maxWidth: '1920px',
           width: '100%',
-          margin: '0 auto',
-          padding: '0 0 0 10px'
+          margin: '0 auto'
+        },
+        '.content-container': {
+          maxWidth: '920px',
+          width: '100%',
+          margin: '0 auto'
         },
         '.primary-blur': {
           background: 'linear-gradient(91.03deg, rgba(255, 254, 254, 0.23) -47.11%, rgba(255, 254, 254, 0.23) 110.32%)',
@@ -42,6 +46,7 @@ module.exports = {
         '.max-w-130-px': { maxWidth: '130px' },
         '.max-w-150px': { maxWidth: '150px' },
         '.w-50px': { width: '50px' },
+        '.f-p': { padding: '50px 0 20px 0' },
         '.h-50px': { height: '50px' },
         '.py-50px': { padding: '50px 0' },
         '.w-30px': { width: '30px' },

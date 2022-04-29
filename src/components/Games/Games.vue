@@ -1,8 +1,7 @@
 <template>
-    <div class="w-full">
-        <MostPopularGame :game="gameList[0]"/>
-        <div class="container">
-            
+    <div class=" py-6">
+        <div class=" max-w-7xl">
+            <MostPopularGame :game="gameList[0]"/>
         </div>
     </div>
 </template>
