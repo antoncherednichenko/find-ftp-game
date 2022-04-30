@@ -4,12 +4,19 @@ const gameStore = {
     
     state: {
         gameList: [],
+        allGames: [],
         currentGame: null,
         isCard: false,
-        mostPopularGame: null
+        mostPopularGame: null,
+        favoriteGamesList: []
     },
     mutations: {
-        toggleCard(state, value) { state.isCard = value }
+        toggleCard(state, value) { state.isCard = value },
+        addFavoriteGame(state, value) { state.favoriteGamesList.push(value) },
+        removeFavoriteGame({ favoriteGamesList }, value) {
+            const i = favoriteGamesList.map(e => e.id).indexOf(value.id)
+            favoriteGamesList.splice(i, 1)
+        }
     },
     actions: {
         getGames({ dispatch, commit }, { currentPlatform, currentGenre, currentSort }) {
@@ -49,6 +56,15 @@ const gameStore = {
                         commit('toggleCard', true)
                     } else {
                         console.error('Woops')
+                    }
+                })
+        }, 
+        getAllGames({ dispatch, commit }) {
+
+            return dispatch('API', {}, { root: true })
+                .then(data => {
+                    if(data?.data) {
+                        commit('setObjectValue', { path: 'game.allGames', value: data.data }, { root: true })
                     }
                 })
         }

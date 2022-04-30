@@ -1,5 +1,8 @@
 <template>
     <div class="w-50px flex flex-col gap-7">
+        <div class="pb-10">
+            <Search />
+        </div>
         <NavIcon
             v-for="e in platforms"
             :key="e.id"
@@ -12,9 +15,10 @@
 
 <script>
 import NavIcon from '@/ui/NavIcon/NavIcon.vue'
+import Search from '@/components/Search/Search.vue'
 
 export default {
-    components: { NavIcon },
+    components: { NavIcon, Search },
     data() {
         return {
             

@@ -49,14 +49,17 @@ module.exports = {
         '.w-50px': { width: '50px' },
         '.f-p': { padding: '50px 0 20px 0' },
         '.h-50px': { height: '50px' },
-        '.py-50px': { padding: '50px 0' },
+        '.py-50px': { paddingTop: '50px', paddingBottom: '50px' },
         '.w-30px': { width: '30px' },
-        '.rounded-l-40px': {
-          borderRadius: '40px 0px 0px 40px'
-        },
+        '.rounded-l-40px': { borderRadius: '40px 0px 0px 40px' },
         '.hover-underline': {
           '&:hover': {
             textDecoration: 'underline'
+          }
+        },
+        '.hover-scale': {
+          '&:hover': {
+            transform: 'scale(1.3)'
           }
         },
         '.screen-center': {
@@ -69,6 +72,13 @@ module.exports = {
           '&:hover': {
             background: theme('colors[primary-orange]')
           }
+        },
+        '.card-gradient': {
+          background: `linear-gradient(179.96deg, rgba(0, 0, 0, 0) 31.56%, ${theme('colors.primary-orange')} 86.9%)`,
+          backdropFilter: 'blur(3px)'
+        },
+        '.transition-bottom': {
+          transition: 'transform 0.5s'
         }
       })
       addComponents({

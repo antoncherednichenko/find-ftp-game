@@ -1,11 +1,15 @@
 <template>
-    <div class="h-screen bg-primary-black max-w-md w-full">  
-
+    <div class="h-screen py-50px px-5 bg-primary-black max-w-md w-full">  
+        <Favorites />
     </div>
 </template>
 
 <script>
-export default {
+import Favorites from '@/components/SideBar/Favorites.vue'
 
+export default {
+    components: {
+        Favorites
+    }
 }
 </script>

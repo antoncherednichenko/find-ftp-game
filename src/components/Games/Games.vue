@@ -1,7 +1,10 @@
 <template>
     <div class=" py-6">
-        <div class=" max-w-7xl">
+        <div class="max-w-7xl center">
             <MostPopularGame />
+        </div>
+        <div class="max-w-7xl center">
+            <GameList :list="gameList" />
         </div>
         <GameCard
             v-if="isCard"
@@ -13,11 +16,13 @@
 <script>
 import MostPopularGame from '@/components/MostPopularGame/MostPopularGame.vue'
 import GameCard from '@/components/GameCard/GameCard.vue'
+import GameList from '@/components/Games/GameList.vue'
 
 export default {
     components: {
         MostPopularGame,
-        GameCard
+        GameCard,
+        GameList
     },
     computed: {
         gameList() { return this.$store.state?.game?.gameList },
