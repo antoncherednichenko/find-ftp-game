@@ -45,6 +45,7 @@ module.exports = {
         },
         '.max-w-130-px': { maxWidth: '130px' },
         '.max-w-150px': { maxWidth: '150px' },
+        '.max-h-85vh': { maxHeight: '85vh' },
         '.w-50px': { width: '50px' },
         '.f-p': { padding: '50px 0 20px 0' },
         '.h-50px': { height: '50px' },

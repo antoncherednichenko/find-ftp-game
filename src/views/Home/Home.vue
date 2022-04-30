@@ -15,7 +15,7 @@ export default {
         currentSort() { return this.$store.state?.filter?.currentSort }
     },
     mounted() {
-        this.$store.dispatch('filter/getGames', {
+        this.$store.dispatch('game/getGames', {
             currentPlatform: this.currentPlatform,
             currentGenre: this.currentGenre,
             currentSort: this.currentSort

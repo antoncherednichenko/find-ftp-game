@@ -20,7 +20,7 @@ export default {
         SideBar
     },
     computed: {
-        isGames() { return this.$store.state?.filter?.gameList?.length > 0 }
+        isGames() { return this.$store.state?.game?.gameList?.length > 0 }
     }
 }
 </script>
