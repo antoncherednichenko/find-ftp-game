@@ -1,6 +1,6 @@
 <template>
     <div class=" w-full bg-primary-grey rounded-l-40px min-h-screen flex">
-        <div class=" px-7 w-full overflow-y-auto h-screen">
+        <div class=" px-7 w-full overflow-y-auto h-screen scrollbar scrollbar-thumb-primary-orange scrollbar-thin">
             <VFilter />
             <Games v-if="isGames" />
         </div>

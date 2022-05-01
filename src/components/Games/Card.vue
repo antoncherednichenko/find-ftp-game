@@ -1,8 +1,10 @@
 <template>
     <button @click="getGame" @mouseover="bottomValue = '-115px'" @mouseleave.stop="bottomValue = '0px'" class="relative overflow-hidden">
-        <button @click.stop="addGameToFavorite" class="bg-primary-grey">
-            <i :class="starStyle" class="fa-star text-primary-orange text-4xl absolute top-8 right-3 hover-scale"></i>
-        </button>
+        <StarBtn
+            @click.stop.native="addGameToFavorite"
+            :active="isFavorite"
+            class="text-4xl absolute top-5 right-3" 
+        />
         <img class=" rounded-md" :src="game.thumbnail" alt="image">
         <div :style="{ transform: `translateY(${bottomValue})` }" class="absolute transition-bottom w-full bg-primary-grey rounded-t-lg text-primary-white font-semibold py-4">
             <h4 class="text-lg w-full text-center">{{ game.title }}</h4>
@@ -16,13 +18,16 @@
 </template>
 
 <script>
-
+import StarBtn from '@/ui/StarBtn/StarBtn.vue'
 
 export default {
     props: {
         game: {
             type: Object
         }
+    },
+    components: {
+        StarBtn
     },
     data() {
         return {
@@ -32,12 +37,6 @@ export default {
     computed: {
         favorits() { return this.$store.state?.game?.favoriteGamesList },
         isFavorite() { return this.favorits.some(e => e.id === this.game.id) },
-        starStyle() {
-            return {
-                'fa-regular': !this.isFavorite,
-                'fa-solid': this.isFavorite,
-            }
-        }
     },
     methods: {
         addGameToFavorite() {

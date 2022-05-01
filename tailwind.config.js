@@ -1,5 +1,6 @@
 const colors = require('@tailwindcss/postcss7-compat/colors')
 const plugin = require('tailwindcss/plugin')
+const scrollbar = require('tailwind-scrollbar')
 
 module.exports = {
   content: ['./public/**/*.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
@@ -17,6 +18,7 @@ module.exports = {
     },
   },
   plugins: [
+    scrollbar,
     plugin(({ addUtilities, addComponents, theme }) => {
       addUtilities({
         '.flex-center-between': {
@@ -79,6 +81,15 @@ module.exports = {
         },
         '.transition-bottom': {
           transition: 'transform 0.5s'
+        },
+        '.transition-w': {
+          transition: 'width 0.5s'
+        },
+        '.w-85%': { width: '85%' },
+        '.hover-item': {
+          '&:hover': {
+            borderBottom: `1px solid ${theme('colors.primary-grey')}`
+          }
         }
       })
       addComponents({

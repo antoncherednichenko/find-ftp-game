@@ -6,7 +6,7 @@
                 @click.native="closeCard" 
             />
         </div>
-        <div class=" rounded-lg p-5 max-w-7xl w-full max-h-85vh screen-center overflow-y-auto bg-primary-white">
+        <div class=" rounded-lg p-5 max-w-7xl w-full max-h-85vh screen-center overflow-y-auto bg-primary-white scrollbar scrollbar-thumb-primary-orange scrollbar-thin">
             <div class="flex justify-center">
                 <a class="text-primary-black text-2xl font-bold underline hover:text-primary-orange" :href="game.game_url" target="_blank">
                     {{ game.title }}
