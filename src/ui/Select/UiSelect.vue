@@ -7,7 +7,7 @@
                 class="fa-solid fa-dice-d6"
             ></i>
         </button>
-        <ul v-if="isListVisible" class="absolute h-56 overflow-y-auto w-56 bg-primary-white rounded">
+        <ul v-if="isListVisible" class="absolute h-56 overflow-y-auto z-50 w-56 bg-primary-white rounded">
             <li 
                 @click="chooseGenre(e)" 
                 class="w-full p-1 text-lg hover-select text-center cursor-pointer" 

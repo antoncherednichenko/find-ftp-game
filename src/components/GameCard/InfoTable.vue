@@ -1,5 +1,5 @@
 <template>
-    <table class="w-1/2">
+    <table class="lg:w-1/2 w-full">
         <tbody v-if="keys">
             <tr><td colspan="2"><CardTitle>{{ title }}</CardTitle></td></tr>
             <tr v-for="(k, i) in keys" :key="i">

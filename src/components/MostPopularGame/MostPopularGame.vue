@@ -1,8 +1,8 @@
 <template>
     <div v-if="game" class="rounded-2xl w-full p-5 bg-primary-black">
-        <div class="flex justify-between items-center">
+        <div class="xl:flex-row flex-col-reverse xl:gap-0 gap-4 flex xl:justify-between xl:items-center">
             <div>
-                <h2 class="text-primary-white text-4xl font-semibold max-w-md">
+                <h2 class="text-primary-white sm:text-xl md:text-4xl text-2xl font-semibold max-w-md">
                     {{ game.title }}
                 </h2>
                 <p class="text-primary-white text-2xl max-w-md py-5 opacity-30">
@@ -17,7 +17,7 @@
                     <p><span class="opacity-30">Release date:</span> {{ game.release_date | dateParser }}</p>
                 </div>
             </div>
-            <img @click="getGame(game.id)" class="block h-80 rounded-lg border-solid border border-primary-white border-opacity-30 cursor-pointer" :src="game.thumbnail" alt="most popular game avatar">
+            <img @click="getGame(game.id)" class="2xl:h-80 xl:h-64  block rounded-lg border-solid border border-primary-white border-opacity-30 cursor-pointer" :src="game.thumbnail" alt="most popular game avatar">
         </div>
     </div>
 </template>

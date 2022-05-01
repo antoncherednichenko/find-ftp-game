@@ -88,9 +88,10 @@ module.exports = {
         '.w-85%': { width: '85%' },
         '.hover-item': {
           '&:hover': {
-            borderBottom: `1px solid ${theme('colors.primary-grey')}`
+            background: 'rgba(0, 0, 0, 0.1)'
           }
-        }
+        },
+        '.max-w-300px': { maxWidth: '300px' }
       })
       addComponents({
         '.btn-primary': {

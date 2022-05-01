@@ -1,6 +1,6 @@
 <template>
-    <div class=" w-screen h-screen absolute top-0 left-0 primary-blur z-20">
-        <div class="flex justify-end p-8">
+    <div class=" px-4 w-screen h-screen overflow-x-hidden absolute z-50 top-0 left-0 primary-blur">
+        <div class="2xl:px-14 2xl:py-8 absolute flex justify-end w-full px-8">
             <CrossBtn
                 class="text-6xl text-primary-white"
                 @click.native="closeCard" 
@@ -14,7 +14,7 @@
             </div>
             <div class="w-full py-5">
                 <CardTitle>Description</CardTitle>
-                <div class="flex justify-between items-center">
+                <div class="lg:flex justify-between items-center">
                     <p class=" max-w-xl w-full">{{ game.description }}</p>
                     <img class="h-80 rounded" :src="game.thumbnail" alt="game">
                 </div>
@@ -23,7 +23,7 @@
                 <CardTitle>Screenshots</CardTitle>
                 <ScreenShots :items="game.screenshots"/>
             </div>
-            <div class="w-full py-5 flex justify-between items-center">
+            <div class="w-full py-5 lg:flex justify-between items-center">
                 <InfoTable 
                     v-if="game.minimum_system_requirements" 
                     :info="game.minimum_system_requirements"

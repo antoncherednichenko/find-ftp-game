@@ -54,7 +54,6 @@ export default {
         }, 
         search() {
             this.resultList = this.allGames.filter(g => g.title.toLowerCase().includes(this.subStr.toLowerCase()))
-            console.log(this.resultList)
         }
     }
 }
