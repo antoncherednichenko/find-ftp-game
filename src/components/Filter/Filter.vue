@@ -1,6 +1,6 @@
 <template>
-    <div :class="{ sticky: !isBurger, 'max-w-300px': isBurger }" class=" w-full px-5 z-10 top-0 bg-primary-grey">
-        <div :class="{ hidden: !isBurger, flex: isBurger, 'flex-wrap': isBurger, 'max-w-300px': isBurger }" class="lg:flex w-full max-w-screen-md justify-between items-center z-20 f-p">
+    <div :class="{ sticky: !isBurger, 'max-w-300px': isBurger }" class=" w-full px-5 z-20 top-0 bg-primary-grey">
+        <div :class="{ hidden: !isBurger, flex: isBurger, 'flex-wrap': isBurger, 'max-w-300px': isBurger }" class="lg:flex w-full max-w-screen-md justify-between items-center f-p">
             <WhiteLink 
                 @click.native="toggleSort(e.id)" 
                 v-for="e in filterList" 
