@@ -3,7 +3,7 @@
         <StarBtn
             @click.stop.native="addGameToFavorite"
             :active="isFavorite"
-            class="text-4xl absolute top-5 right-3" 
+            class="text-4xl absolute top-5 right-3 z-30" 
         />
         <img class=" rounded-md" :src="game.thumbnail" alt="image">
         <div :style="{ transform: `translateY(${bottomValue})` }" class="absolute transition-bottom w-full bg-primary-grey rounded-t-lg text-primary-white font-semibold py-4">
